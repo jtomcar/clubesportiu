@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 public class ProvaDao {
-    private JdbcTemplate jdbcTemplate;
+    private static JdbcTemplate jdbcTemplate;
 
     // Obté el jdbcTemplate a partir del Data Source
     @Autowired
@@ -21,7 +21,7 @@ public class ProvaDao {
     }
 
     /** Afegeix una prova nova*/
-    void addProva(Prova prova){
+    public static void addProva(Prova prova){
         jdbcTemplate.update("INSERT INTO prova VALUES(?,?,?,?)",
                 prova.getNom(),prova.getDescripcio(),prova.getTipus(),prova.getData());
 
@@ -31,7 +31,7 @@ public class ProvaDao {
         jdbcTemplate.update("DELETE FROM prova WHERE nom=?", prova.getNom());
     }
 
-    void updateProva(Prova prova) {
+    public void updateProva(Prova prova) {
         jdbcTemplate.update("UPDATE prova SET descripcio=?,tipus=?,data=?",
                                 prova.getDescripcio(),prova.getTipus(),prova.getData());
     }

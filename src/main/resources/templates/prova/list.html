@@ -13,6 +13,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Tipus</th>
             <th scope="col">Descripció</th>
+            <th scope="col">Data</th>
             <th scope="col">Nadadors</th>
             <th></th>
             <th></th>
@@ -23,11 +24,12 @@
             <td th:text="${prova.nom}"></td>
             <td th:text="${prova.tipus}"></td>
             <td th:text="${prova.descripcio}"></td>
+            <td th:text="${#temporals.format(prova.data,'dd MMMM yyyy')}"></td>
             <td><a th:href="@{/classificacio/perpais/{nomprova}(nomprova=${prova.nom})}">Per pais</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <a href="add">Afegeix prova</a>
+    <a type="button" class="btn btn-success" href="add">  Afegeix prova</a>
 </body>
 </html>

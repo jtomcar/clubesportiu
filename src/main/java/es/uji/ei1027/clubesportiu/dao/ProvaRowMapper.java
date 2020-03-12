@@ -12,7 +12,7 @@ public class ProvaRowMapper implements RowMapper<Prova> {
     public Prova mapRow(ResultSet rs, int rowNum) throws SQLException {
         Prova prova = new Prova();
         prova.setNom(rs.getString("nom"));
-        prova.setData(rs.getDate("data"));
+        prova.setData(rs.getDate("data").toLocalDate());
         prova.setDescripcio(rs.getString("descripcio"));
         prova.setTipus(rs.getString("tipus"));
         return prova;
