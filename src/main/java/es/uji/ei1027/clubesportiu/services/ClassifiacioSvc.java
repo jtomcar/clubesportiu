@@ -25,7 +25,7 @@ class ClassificacioSvc implements ClassificacioService {
     @Override
     public Map<String, List<Nadador>> getClassificationByCountry(String prova) {
         List<Classificacio> classProva =
-                classificacioDao.getClassificacioProva(prova);
+                classificacioDao.getClassificacioProvaPais(prova);
         HashMap<String,List<Nadador>> nadadorsPerPais =
                 new HashMap<String,List<Nadador>>();
         for (Classificacio clsf : classProva) {

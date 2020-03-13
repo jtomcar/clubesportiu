@@ -61,8 +61,8 @@ public class ClassificacioDao {
             return new ArrayList<Classificacio>();
         }
     }
-    public List<Classificacio> getClassificacioProva(String nomProva) {
-        return this.jdbcTemplate.query(
+    public List<Classificacio> getClassificacioProvaPais(String nomProva) {
+        return jdbcTemplate.query(
                 "SELECT * FROM classificacio WHERE nom_prova=?",
                 new Object[] {nomProva}, new ClassificacioRowMapper());
     }
